@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sockets socc</title>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="nick" style="margin-top:10px; margin-bottom:10px;">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <input id="username" type="text" class="form-control" placeholder="Podaj nickname" aria-label="Podaj nickname">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button" onClick="setNickname($('#username').val())">Ustaw</button>
+            </span>
+          </div> 
+        </div>
+      </div>
+      <div class="row" style="margin-top:10px; margin-bottom:10px;">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <input id="message" type="text" class="form-control" placeholder="Wiadomość" aria-label="Wiadomość">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button" onClick="sendMessage({user: username, message: $('#message').val()})">Dodaj</button>
+            </span>
+          </div>    
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <ul class="list-group" id="chat"></ul>
+        </div>
+        <div class="col-sm-2">
+          <ul class="list-group" id="users"></ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <script src="./js/connect.js"></script>
+  </body>
+</html>
